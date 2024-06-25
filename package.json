@@ -15,7 +15,8 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts, --fix",
     "prettier-check": "prettier --check '**/*.{ts,json}'",
-    "prettier-format": "prettier --write '**/*.{ts,json}'"
+    "prettier-format": "prettier --write '**/*.{ts,json}'",
+    "test": "vitest --run"
   },
   "dependencies": {
     "@braintree/sanitize-url": "^6.0.2",
