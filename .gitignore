@@ -1,0 +1,7 @@
+node_modules/
+
+dist/
+.devcontainer/
+.idea/
+
+mongodb/data/*

@@ -1,0 +1,16 @@
+*.config.js
+__tests__
+__mocks__
+mongodb/*
+mongodbSeeder/*
+tools/mongodbSeeder/*
+src/common/btec-types
+cypress/support/btec-types
+lighthouserc.js
+puppeteer/*
+node_modules
+
+tools/prepData.ts
+
+#ignore tests
+src/**/*.test.ts

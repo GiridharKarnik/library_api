@@ -1,0 +1,27 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:jammy
+    container_name: book_library
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root_password
+      MONGO_INITDB_DATABASE: book_library
+    volumes:
+      - ./mongodb/db-init.js:/docker-entrypoint-initdb.d/db-init.js:ro
+      - ./mongodb/data:/data/db
+    ports:
+      - "27017:27017"
+
+  api:
+    build: .
+    image: book_library_api
+    container_name: book_library_api
+    restart: always
+    command: ["npm", "run", "start:test"]
+    depends_on:
+      - mongodb
+    ports:
+      - "3030:3030"
+
