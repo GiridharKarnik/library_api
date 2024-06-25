@@ -43,28 +43,56 @@ The script at `./mongodb/init-mongo.js` is used to initialize the MongoDB databa
 #### Stories - with proposed solution
 
 * As a library user, I would like to be able to find books by my favourite author, so that I know if they are available in the library.
+  <details>
+    <summary>Solution</summary>
+  
   * The user can search for books by author name by making a GET request to `/books?author=<author_name>`. The API will return a list of books by the author.
-  ![booksByAuthor.png](./readmeAssets/booksByAuthor.png)
+    ![booksByAuthor.png](./readmeAssets/booksByAuthor.png)
+  </details>
+
 
 * As a library user, I would like to be able to find books by ISBN, so that I know if they are available in the library.
+  <details>
+    <summary>Solution</summary>
+
   * The user can search for books by ISBN by making a GET request to `/books?isbn=<isbn>`. The API will return a list of books with the ISBN.
-  ![booksByISBN.png](./readmeAssets/booksByISBN.png)
+    ![booksByISBN.png](./readmeAssets/booksByISBN.png)
+  </details>
+
 
 * As a library user, I would like to be able to find books by title, so that I know if they are available in the library.
+  <details>
+    <summary>Solution</summary>
+  
   * The user can search for books by title by making a GET request to `/books?title=<title>`. The API will return a list of books with the title.
   ![booksByTitle.png](./readmeAssets/booksByTitle.png)
+  </details>
+
 
 * As a library user, I would like to be able to borrow a book, so I can read it at home.
+  <details>
+    <summary>Solution</summary>
+
   * The user can borrow a book by making a PUT request to `/books/<book_id>/status` with status `checked-out`. The API will update the status of the book to `checked-out`.
-  ![borrowABook.png](./readmeAssets/borrowABook.png)
+    ![borrowABook.png](./readmeAssets/borrowABook.png)
+  </details>
 
 * As the library owner, I would like to know how many books are being borrowed, so I can see how many are outstanding.
-  * The library owner can get the number of books being borrowed by making a GET request to `/books/status?status="checked-out"`. The API will return the number of books with status `checked-out`.
-  ![booksByStatus.png](./readmeAssets/booksByStatus.png)
+  <details>
+    <summary>Solution</summary>
 
-* As a library user, I should be to prevented from borrowing reference books, so that they are always available. 
+  * The library owner can get the number of books being borrowed by making a GET request to `/books/status?status="checked-out"`. The API will return the number of books with status `checked-out`.
+    ![booksByStatus.png](./readmeAssets/booksByStatus.png)
+  </details>
+
+* As a library user, I should be to prevented from borrowing reference books, so that they are always available.
+  <details>
+    <summary>Solution</summary>
+  
   * The user cannot borrow reference books. You can test this out by trying to borrow a reference book. The API will return an error message.
   ![referenceBookCannotBeBorrowed.png](./readmeAssets/referenceBookCannotBeBorrowed.png)
+  </details>
+
 
 #### Extras
 
